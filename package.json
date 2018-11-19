@@ -1,0 +1,83 @@
+{
+  "name": "@cat5th/serializer",
+  "version": "0.1.0",
+  "description": "This is a simple serializer for serializing data, keeping the type and refs in a certain context",
+  "main": "dist/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "doc": "typedoc --options typedoc.js",
+    "lint-test": "npm run lint && npm run test",
+    "prepush": "npm run lint-test",
+    "test": "cross-env NODE_ENV=test nyc mocha -r ./babel-register src/__tests__/**/*.ts",
+    "build:babel": "babel src --ignore 'src/**/*.spec.ts','src/**/*.test.ts','src/__tests__/**/*.ts' --out-dir dist --extensions '.ts,.tsx,.js,.jsx' && uglifyjs-folder dist -e -o dist -x .js",
+    "clear": "rm -rf dist",
+    "build": "npm run clear && npm run type && npm run build:babel",
+    "type": "tsc --emitDeclarationOnly --removeComments false",
+    "lint": "eslint 'src/**/*.ts'",
+    "postversion": "git push --follow-tags",
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "pre-push": "prepush",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harvey-woo/serializer.git"
+  },
+  "keywords": [
+    "serializer"
+  ],
+  "author": "Harvey.woo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harvey-woo/serializer/issues"
+  },
+  "homepage": "https://github.com/harvey-woo/serializer#readme",
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-istanbul": "^5.1.0",
+    "chai": "^4.2.0",
+    "codecov": "^3.1.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-typescript": "^0.13.0",
+    "mocha": "^5.2.0",
+    "pre-push": "^0.1.1",
+    "source-map-support": "^0.5.9",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.13.0",
+    "typedoc-plugin-ensure-internal": "git+https://github.com/deap82/typedoc-plugin-ensure-internal.git",
+    "typedoc-plugin-external-module-name": "^1.1.3",
+    "typedoc-plugin-internal-external": "^1.0.10",
+    "typedoc-plugin-markdown": "^1.1.18",
+    "typescript": "^3.1.4",
+    "typescript-eslint-parser": "^20.1.1",
+    "uglifyjs-folder": "^1.5.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5"
+  }
+}
