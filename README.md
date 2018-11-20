@@ -2,6 +2,13 @@
 
 ## This registry is still in constructing, do not use it in production
 
+[documentation](https://harvey-woo.github.io/serializer/index.html)
+
+[![npm version](https://img.shields.io/npm/v/@cat5th/serializer.svg?style=flat-square)](https://www.npmjs.com/package/@cat5th/serializer)
+[![coverage](https://img.shields.io/codecov/c/github/harvey-woo/serializer.svg?style=flat-square)](https://codecov.io/gh/harvey-woo/serializer)
+[![npm downloads](https://img.shields.io/npm/dt/@cat5th/serializer.svg?style=flat-square)](https://www.npmjs.com/package/@cat5th/serializer)
+[![Build Status](https://img.shields.io/travis/harvey-woo/serializer.svg?style=flat-square)](https://travis-ci.org/harvey-woo/serializer)
+
 ## What is it
 This is a simple serializer for serializing data, keeping the type and refs in a certain context
 
