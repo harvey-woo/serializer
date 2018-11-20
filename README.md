@@ -46,7 +46,7 @@ class A() {
 unserilazer(JSON.parse(data), { classes: { A } })
 ```
 
-serializer will keep the references, you will get same reference as following example
+serializer will keep the references, you will get same reference as following example
 
 ```javascript
 const obj = {}

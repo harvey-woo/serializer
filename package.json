@@ -36,6 +36,10 @@
       "src/**/*.ts",
       "src/**/*.tsx"
     ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
     "reporter": [
       "text",
       "html"
@@ -63,6 +67,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-typescript": "^0.13.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "pre-push": "^0.1.1",
     "source-map-support": "^0.5.9",
     "ts-node": "^7.0.1",
