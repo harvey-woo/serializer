@@ -1,6 +1,6 @@
 {
   "name": "@cat5th/serializer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is a simple serializer for serializing data, keeping the type and refs in a certain context",
   "main": "dist/index.js",
   "sideEffects": false,
